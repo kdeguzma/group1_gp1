@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/kdeguzma/Documents/group1_gp1/build/group1_gp1",
+        "/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/kdeguzma/Documents/group1_gp1/build/group1_gp1",
+        "/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ]
+}

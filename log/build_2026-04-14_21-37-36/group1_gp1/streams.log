@@ -1,0 +1,29 @@
+[0.957s] Invoking command in '/home/kdeguzma/Documents/group1_gp1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/group1_gp1 build --build-base /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build install --record /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log --single-version-externally-managed install_data
+[1.282s] running egg_info
+[1.306s] writing build/group1_gp1/group1_gp1.egg-info/PKG-INFO
+[1.306s] writing dependency_links to build/group1_gp1/group1_gp1.egg-info/dependency_links.txt
+[1.306s] writing entry points to build/group1_gp1/group1_gp1.egg-info/entry_points.txt
+[1.306s] writing requirements to build/group1_gp1/group1_gp1.egg-info/requires.txt
+[1.306s] writing top-level names to build/group1_gp1/group1_gp1.egg-info/top_level.txt
+[1.360s] reading manifest file 'build/group1_gp1/group1_gp1.egg-info/SOURCES.txt'
+[1.361s] writing manifest file 'build/group1_gp1/group1_gp1.egg-info/SOURCES.txt'
+[1.361s] running build
+[1.361s] running build_py
+[1.361s] copying group1_gp1/dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[1.362s] running install
+[1.368s] running install_lib
+[1.395s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[1.396s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/dispatcher.py to dispatcher.cpython-312.pyc
+[1.396s] running install_data
+[1.397s] running install_egg_info
+[1.425s] removing '/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1-1.0.0-py3.12.egg-info' (and everything under it)
+[1.425s] Copying build/group1_gp1/group1_gp1.egg-info to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1-1.0.0-py3.12.egg-info
+[1.426s] running install_scripts
+[1.591s] Installing debug_logger script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.591s] Installing dispatcher script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.591s] Installing monitor script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.591s] Installing robot_1 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.592s] Installing robot_2 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.592s] Installing robot_3 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[1.592s] writing list of installed files to '/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log'
+[1.622s] Invoked command in '/home/kdeguzma/Documents/group1_gp1' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/group1_gp1 build --build-base /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build install --record /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log --single-version-externally-managed install_data

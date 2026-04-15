@@ -1,0 +1,7 @@
+[console_scripts]
+debug_logger = scripts.main_debug_logger:main
+dispatcher = scripts.main_dispatcher:main
+monitor = scripts.main_monitor:main
+robot_1 = scripts.main_robot_1:main
+robot_2 = scripts.main_robot_2:main
+robot_3 = scripts.main_robot_3:main
