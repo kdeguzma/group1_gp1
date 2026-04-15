@@ -50,9 +50,9 @@ class RobotOne(Node):
             # QoS profile: WE NEED TO MAKE SURE monitor and debug_logger USE COMPATIBLE QoS POLICIES WITH THIS NODE.
             qos,
         )
-        # Fire the _publisher_callback every 0.5 s while the node is spinning.
+        # Fire the _publisher_callback every 0.1 s while the node is spinning.
         self.timer: Timer = self.create_timer(
-            0.5,
+            0.1,
             self._timer_callback,
             # Only one callback can run at a time.
             callback_group=self._callback_group,
@@ -64,22 +64,26 @@ class RobotOne(Node):
         # If there's no tasks, exit this function using return.
         if self._task is None:
             return
+        # Timer tick resolution of 0.1 chosen to account for robot_3's 0.3 s requirement.
+        self._counter += 0.1
 
-        self._counter += 0.5
+        if self._counter < 0.5:
+            self._status = "busy"
+            message = String()
+            payload = {"robot_id": self._robot_id, "status": self._status, "task": self._task}
 
-        # Change the status of robot_1 to "done" at 0.5 seconds.
-        # Log the task completed.
-        if self._counter >= 0.5:
-            self._status = "done"
-            # THE LOGGER INFO IS NOT THE SAME AS THE MESSAGE BEING PUBLISHED!!!
-            self.get_logger().info(f"Task {self._task} complete")
-
+            # Publish the message in JSON format.
+            message.data = json.dumps(payload)
+            self._publisher.publish(message)
+            return
+        # THE LOGGER INFO IS NOT THE SAME AS THE MESSAGE BEING PUBLISHED!!!
+        self.get_logger().info(f"Task {self._task} complete")
+        self._status = "done"
         message = String()
         payload = {"robot_id": self._robot_id, "status": self._status, "task": self._task}
-
-        # Publish the message in JSON format for consistency.
         message.data = json.dumps(payload)
         self._publisher.publish(message)
+
         # Clear the task after publishing.
         self._task = None
 
