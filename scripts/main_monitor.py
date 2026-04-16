@@ -13,7 +13,9 @@ def main(args=None) -> None:
     # Initizlize rclpy and build the node by calling the class.
     rclpy.init(args=args)
     node = Monitor("monitor")
-    # 4 threads: dispatch, robot_1, robot_2, robot_3
+    
+    # Used a MultiThreadedExecutor so the node can service requests from
+    # different groups at the same time.
     executor = MultiThreadedExecutor(num_threads = 4)
     executor.add_node(node)
     

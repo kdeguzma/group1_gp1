@@ -7,6 +7,8 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     enable_debug = LaunchConfiguration("enable_debug")
+    enable_mismatch = LaunchConfiguration("enable_mismatch")
+    start_robot2 = LaunchConfiguration("robot_2")
     
     dispatcher = Node(
         package="group1_gp1", executable="dispatcher",
@@ -26,6 +28,7 @@ def generate_launch_description():
     robot_2 = Node(
     package="group1_gp1", executable="robot_2",
     output="screen", emulate_tty=True,
+    condition = IfCondition(start_robot2)
     )
     
     robot_3 = Node(
@@ -39,6 +42,11 @@ def generate_launch_description():
     condition = IfCondition(enable_debug),
     )
     
+    mismatch_subscriber = Node(
+    package="group1_gp1", executable="mismatch_sub",
+    output="screen", emulate_tty=True,
+    condition = IfCondition(enable_mismatch),
+    )  
     
 
     admin_group = GroupAction([dispatcher, monitor])
@@ -46,9 +54,22 @@ def generate_launch_description():
     
     
 
-    ld = LaunchDescription([DeclareLaunchArgument("enable_debug",default_value = "false",description="Launch the debug logger node")])
+    ld = LaunchDescription([DeclareLaunchArgument("enable_debug",
+        default_value="false",
+        description="Launch the debug logger node",
+        ),
+        DeclareLaunchArgument("enable_mismatch",
+        default_value="false",
+        description="Launch the mismatch subscriber node",
+        ),
+        DeclareLaunchArgument("robot_2",
+        default_value="true",
+        description="Launch the robot_2 node",
+        )])
+    
     ld.add_action(admin_group)
     ld.add_action(robot_group)
     ld.add_action(debug_logger)    
+    ld.add_action(mismatch_subscriber)
 
     return ld

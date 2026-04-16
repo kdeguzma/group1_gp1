@@ -13,8 +13,8 @@ class DebugLogger(Node):
     def __init__(self, node_name:str)->None:
         super().__init__(node_name)
         
-        self._qos_tasks = QoSProfile(depth = 1, reliability = ReliabilityPolicy.BEST_EFFORT, durability = DurabilityPolicy.TRANSIENT_LOCAL)
-        self._qos_status = QoSProfile(depth = 1, reliability = ReliabilityPolicy.RELIABLE, durability = DurabilityPolicy.VOLATILE)
+        self._qos_tasks = QoSProfile(depth = 1, reliability = ReliabilityPolicy.RELIABLE, durability = DurabilityPolicy.TRANSIENT_LOCAL)
+        self._qos_status = QoSProfile(depth = 1, reliability = ReliabilityPolicy.BEST_EFFORT, durability = DurabilityPolicy.VOLATILE)
         self._subscriber_tasks = self.create_subscription(String,"/fleet/tasks",self._subscriber_callback_tasks, self._qos_tasks)
         self._subscriber_status = self.create_subscription(String,"/fleet/status",self._subscriber_callback_status, self._qos_status)
         

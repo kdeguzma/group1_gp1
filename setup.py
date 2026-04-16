@@ -28,7 +28,8 @@ setup(
             "robot_2 = scripts.main_robot_2:main",
             "robot_3 = scripts.main_robot_3:main",
             "monitor = scripts.main_monitor:main",
-            "debug_logger = scripts.main_debug_logger:main"
+            "debug_logger = scripts.main_debug_logger:main",
+            "mismatch_sub = scripts.main_mismatch_sub:main",
             
         ],
     },

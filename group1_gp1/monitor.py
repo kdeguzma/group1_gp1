@@ -22,7 +22,14 @@ class Monitor(Node):
         self._qos_sub = QoSProfile(
             depth=3, reliability=ReliabilityPolicy.BEST_EFFORT, durability=DurabilityPolicy.VOLATILE
         )
+        # Use a MutuallyExclusiveCallbackGroup so subscription callbacks do not run
+        # concurrently. Necessary because class is updating shared robot tracking dictionaries. 
+          
         self._sub_callback_group = MutuallyExclusiveCallbackGroup()
+        
+        # Use a ReentrantCallbackGroup so the periodic report timer is independent
+        # from the subscription callback. This allows it to run without blocking other callbacks.
+        
         self._pub_callback_group = ReentrantCallbackGroup()
         self._publisher = self.create_publisher(String, "/fleet/report", self._qos_pub)
         self._subscriber = self.create_subscription(
@@ -32,6 +39,7 @@ class Monitor(Node):
             self._qos_sub,
             callback_group=self._sub_callback_group,
         )
+        
 
         self._robot_last_task = {"robot_1": None, "robot_2": None, "robot_3": None}
         self._robot_completed = {"robot_1": 0, "robot_2": 0, "robot_3": 0}
@@ -76,7 +84,7 @@ class Monitor(Node):
 
         # publish message to topic/log
         self._publisher.publish(msg)
-        self.get_logger().info(f"Fleet report -- robot_1: {self._robot_completed['robot_1']}, robot_2: {self._robot_completed['robot_2']}, robot_3: {self._robot_completed['robot_3']}\n")
+        self.get_logger().info(f"Fleet report -- robot_1: {self._robot_completed['robot_1']}, robot_2: {self._robot_completed['robot_2']}, robot_3: {self._robot_completed['robot_3']}")
         
         
         

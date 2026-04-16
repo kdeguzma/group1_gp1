@@ -22,22 +22,29 @@ class RobotThree(Node):
         # This is needed so both callbacks don't run at the same time and cause race conditions.
         self._callback_group = MutuallyExclusiveCallbackGroup()
         # Define the QoS profile required for the /fleet/tasks topic.
-        qos = QoSProfile(
+        
+        qos_sub = QoSProfile(
             depth=5,
             reliability=ReliabilityPolicy.RELIABLE,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
             history=HistoryPolicy.KEEP_LAST,
         )
+        qos_pub = QoSProfile(
+            depth=3,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+        )
+        
         # Creates a subscriber object for /fleet/tasks.
         self._subscriber: Subscription = self.create_subscription(
             # Message type: WE NEED TO MAKE SURE THIS MATCHES dispatcher's MESSAGE TYPE.
             String,
             # Topic name: WE NEED TO MAKE SURE THIS MATCHES dispatcher's TOPIC NAME.
-            "fleet/tasks",
+            "/fleet/tasks",
             # Callback.
             self._subscriber_callback,
             # QoS profile. WE NEED TO MAKE SURE dispatcher USES A COMPATIBLE QoS POLICY WITH THIS NODE.
-            qos,
+            qos_sub,
             # Only one callback can run at a time.
             callback_group=self._callback_group,
         )
@@ -46,9 +53,9 @@ class RobotThree(Node):
             # Message type: WE NEED TO MAKE SURE THIS MATCHES monitor's and debug_logger's MESSAGE TYPE.
             String,
             # Topic name: WE NEED TO MAKE SURE THIS MATCHES monitor's and debug_logger's TOPIC NAME.
-            "fleet/status",
+            "/fleet/status",
             # QoS profile: WE NEED TO MAKE SURE monitor and debug_logger USE COMPATIBLE QoS POLICIES WITH THIS NODE.
-            qos,
+            qos_pub,
         )
         # Fire the _publisher_callback every 0.1 s while the node is spinning.
         self.timer: Timer = self.create_timer(
