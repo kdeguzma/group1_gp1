@@ -76,11 +76,13 @@ class Monitor(Node):
 
         # publish message to topic/log
         self._publisher.publish(msg)
-
-        # Get the number of completed tasks for each robot from the dictionary.
-        robot_1_no_tasks = self._robot_completed["robot_1"]
-        robot_2_no_tasks = self._robot_completed["robot_2"]
-        robot_3_no_tasks = self._robot_completed["robot_3"]
-        self.get_logger().info(
-            f"Fleet report -- robot_1: {robot_1_no_tasks} tasks, robot_2: {robot_2_no_tasks} tasks, robot_3: {robot_3_no_tasks} tasks"
-        )
+        self.get_logger().info(f"Fleet report -- robot_1: {self._robot_completed['robot_1']}, robot_2: {self._robot_completed['robot_2']}, robot_3: {self._robot_completed['robot_3']}\n")
+        
+        
+        
+        
+        
+        
+        
+        
+        
