@@ -1,6 +1,6 @@
 1. Group members: names and UIDs.
 
-Kyle DeGuzman (120452062), Stephen Snelson (#####)
+Kyle DeGuzman (120452062), Stephen Snelson (12254074)
 
 2. Contributions: a brief description of each team member’s contributions (e.g., which nodes each person implemented, who wrote the launch files, who handled QoS configuration).
 
