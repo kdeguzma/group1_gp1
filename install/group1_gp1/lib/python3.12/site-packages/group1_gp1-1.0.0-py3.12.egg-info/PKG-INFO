@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: group1-gp1
-Version: 1.0.0
-Summary: This package dispatches tasks to a fleet of mobile robots.
-Maintainer: kdeguzma
-Maintainer-email: kdeguzma@umd.edu
-License: Apache-2.0
-Provides-Extra: test

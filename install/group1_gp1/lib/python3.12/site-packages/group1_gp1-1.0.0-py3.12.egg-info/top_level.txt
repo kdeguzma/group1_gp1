@@ -1,2 +1,0 @@
-group1_gp1
-scripts
