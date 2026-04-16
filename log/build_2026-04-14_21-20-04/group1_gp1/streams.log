@@ -1,0 +1,80 @@
+[6.906s] Invoking command in '/home/kdeguzma/Documents/group1_gp1/build/group1_gp1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build
+[7.281s] running develop
+[7.562s] Removing /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1-gp1.egg-link (link to .)
+[7.596s] Invoked command in '/home/kdeguzma/Documents/group1_gp1/build/group1_gp1' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build
+[7.597s] Invoking command in '/home/kdeguzma/Documents/group1_gp1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/group1_gp1 build --build-base /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build install --record /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log --single-version-externally-managed install_data --force
+[7.922s] running egg_info
+[7.950s] writing build/group1_gp1/group1_gp1.egg-info/PKG-INFO
+[7.950s] writing dependency_links to build/group1_gp1/group1_gp1.egg-info/dependency_links.txt
+[7.950s] writing entry points to build/group1_gp1/group1_gp1.egg-info/entry_points.txt
+[7.950s] writing requirements to build/group1_gp1/group1_gp1.egg-info/requires.txt
+[7.951s] writing top-level names to build/group1_gp1/group1_gp1.egg-info/top_level.txt
+[8.008s] reading manifest file 'build/group1_gp1/group1_gp1.egg-info/SOURCES.txt'
+[8.023s] writing manifest file 'build/group1_gp1/group1_gp1.egg-info/SOURCES.txt'
+[8.023s] running build
+[8.023s] running build_py
+[8.023s] creating /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build
+[8.023s] creating /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib
+[8.023s] creating /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.023s] copying group1_gp1/debug_logger.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.023s] copying group1_gp1/robot_3.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] copying group1_gp1/monitor.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] copying group1_gp1/dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] copying group1_gp1/robot_1.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] copying group1_gp1/__init__.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] copying group1_gp1/robot_2.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1
+[8.024s] creating /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.024s] copying scripts/main_robot_3.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.024s] copying scripts/main_robot_1.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] copying scripts/main_debug_logger.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] copying scripts/main_dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] copying scripts/main_robot_2.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] copying scripts/main_monitor.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] copying scripts/__init__.py -> /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts
+[8.025s] running install
+[8.032s] running install_lib
+[8.061s] creating /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.061s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/debug_logger.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.061s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/robot_3.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.061s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/monitor.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.061s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/robot_1.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/__init__.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/group1_gp1/robot_2.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1
+[8.062s] creating /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_robot_3.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_robot_1.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_debug_logger.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_dispatcher.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_robot_2.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.062s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/main_monitor.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.063s] copying /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build/lib/scripts/__init__.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts
+[8.063s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/debug_logger.py to debug_logger.cpython-312.pyc
+[8.064s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/robot_3.py to robot_3.cpython-312.pyc
+[8.065s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/monitor.py to monitor.cpython-312.pyc
+[8.065s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/dispatcher.py to dispatcher.cpython-312.pyc
+[8.066s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/robot_1.py to robot_1.cpython-312.pyc
+[8.067s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/__init__.py to __init__.cpython-312.pyc
+[8.067s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1/robot_2.py to robot_2.cpython-312.pyc
+[8.067s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_robot_3.py to main_robot_3.cpython-312.pyc
+[8.068s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_robot_1.py to main_robot_1.cpython-312.pyc
+[8.068s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_debug_logger.py to main_debug_logger.cpython-312.pyc
+[8.068s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_dispatcher.py to main_dispatcher.cpython-312.pyc
+[8.069s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_robot_2.py to main_robot_2.cpython-312.pyc
+[8.069s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/main_monitor.py to main_monitor.cpython-312.pyc
+[8.069s] byte-compiling /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/scripts/__init__.py to __init__.cpython-312.pyc
+[8.070s] running install_data
+[8.070s] copying resource/group1_gp1 -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/share/ament_index/resource_index/packages
+[8.070s] copying package.xml -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/share/group1_gp1
+[8.070s] copying launch/system.launch.py -> /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/share/group1_gp1/launch
+[8.070s] running install_egg_info
+[8.099s] Copying build/group1_gp1/group1_gp1.egg-info to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages/group1_gp1-1.0.0-py3.12.egg-info
+[8.100s] running install_scripts
+[8.269s] Installing debug_logger script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] Installing dispatcher script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] Installing monitor script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] Installing robot_1 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] Installing robot_2 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] Installing robot_3 script to /home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/group1_gp1
+[8.269s] writing list of installed files to '/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log'
+[8.299s] Invoked command in '/home/kdeguzma/Documents/group1_gp1' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/kdeguzma/Documents/group1_gp1/build/group1_gp1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kdeguzma/Documents/group1_gp1/install/group1_gp1/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/group1_gp1 build --build-base /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/build install --record /home/kdeguzma/Documents/group1_gp1/build/group1_gp1/install.log --single-version-externally-managed install_data --force
