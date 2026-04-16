@@ -59,7 +59,7 @@ class Monitor(Node):
         
         #publish message to topic/log                                
         self._publisher.publish(msg)
-        self.get_logger().info(f"Fleet report -- {msg.data}\n")
+        self.get_logger().info(f"Fleet report -- robot_1: {self._robot_completed['robot_1']}, robot_2: {self._robot_completed['robot_2']}, robot_3: {self._robot_completed['robot_3']}\n")
         
         
         
