@@ -41,7 +41,7 @@ class Dispatcher(Node):
 
         # have publisher issue the message
         self._publisher.publish(msg)
-        self.get_logger().info(f"Assigned task {task}{location} to {robot}")
-
-        # increment index
+        self.get_logger().info(f"Assigned task {task}{location} to {robot}\n")
+        
+        #increment index
         self._index += 1
