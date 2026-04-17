@@ -3,7 +3,7 @@
 # system.launch.py - File to launch multiple nodes for debugging.
 
 # Import necessary dependencies.
-from launch.actions import DeclareLaunchArgument, GroupAction
+from launch.actions import DeclareLaunchArgument, GroupAction, TimerAction
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -75,7 +75,15 @@ def generate_launch_description():
     )
     # Set groups for helping with debugging.
     admin_group = GroupAction([dispatcher, monitor])
-    robot_group = GroupAction([robot_1, robot_2, robot_3])
+    robot_group = GroupAction(
+        [
+            robot_1,
+            robot_2,
+            TimerAction(  # Start robot_3 five seconds late to demonstrate TRANSIENT_LOCAL.
+                period=5.0, actions=[robot_3]
+            ),
+        ]
+    )
 
     # Define the LaunchDescription.
     ld = LaunchDescription(
