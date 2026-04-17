@@ -18,10 +18,14 @@ from std_msgs.msg import String
 class RobotThree(Node):
     """Class for robot_3's node which subscribes to /fleet/tasks and publishes to /fleet/status."""
 
-    def __init__(self) -> None:
-        """Initializer function for the robot_3 sub/pub node."""
+    def __init__(self, node_name: str) -> None:
+        """Initializer function for the robot_3 sub/pub node.
+
+        Args:
+            node_name (str): The name to be set for this node with super().__init__().
+        """
         # Initialize the node with the name "robot_3".
-        super().__init__("robot_3")
+        super().__init__(node_name)
         # Initialize the counter.
         self._counter: float = 0
         # Initialize the status.
@@ -68,7 +72,7 @@ class RobotThree(Node):
             # QoS profile: WE NEED TO MAKE SURE monitor and debug_logger USE COMPATIBLE QoS POLICIES WITH THIS NODE.
             qos_pub,
         )
-        # Fire the _publisher_callback every 0.1 s while the node is spinning.
+        # Fire the _timer_callback every 0.1 s while the node is spinning.
         self.timer: Timer = self.create_timer(
             0.1,
             self._timer_callback,

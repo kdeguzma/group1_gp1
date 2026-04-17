@@ -27,10 +27,11 @@ def main(args=None) -> None:
     # Ctrl+C stops the node.
 
     except KeyboardInterrupt:
-        print("Exception: Node stopped.")
+        node.get_logger().info("Shutting down.")
 
     # Clean up and shut down the node when done.
     finally:
         node.destroy_node()
+        # Account for ROS 2 already shutting down.
         if rclpy.ok():
             rclpy.shutdown
