@@ -133,8 +133,8 @@ class RobotTwo(Node):
 
             # Filter out tasks that are not robot_2's ID.
             if (
-                robot_id != self._robot_id
-            ):  # or self._task is not None: # Commented out: Prevent accepting new tasks while busy.
+                (robot_id != self._robot_id) or self._task is not None
+            ):  # Prevent accepting new tasks while busy. This is needed to demonstrate queue buildup.
                 return
 
             # Otherwise, accept and set the task as robot_2's attribute.
