@@ -1,5 +1,11 @@
+# ENPM605 Project GP1 - Scenario 2
+# Group 1
+# robot_2.py - Subscribes to /fleet/tasks, publishes to /fleet/status, and filters messages for id.
+
+# Import JSON needed for publishing messages.
 import json
 
+# Import necessary dependencies.
 from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
 from rclpy.node import Node
 from rclpy.publisher import Publisher
@@ -10,31 +16,37 @@ from std_msgs.msg import String
 
 
 class RobotTwo(Node):
-    """Class for robot_2's node which subscribes to /fleet/tasks."""
+    """Class for robot_2's node which subscribes to /fleet/tasks and publishes to /fleet/status."""
 
     def __init__(self) -> None:
-        """Initializer function for the robot_2 subscriber node."""
+        """Initializer function for the robot_2 sub/pub node."""
+        # Initialize the node with the name "robot_2".
         super().__init__("robot_2")
+        # Initialize the counter.
         self._counter: float = 0
+        # Initialize the status.
         self._status: str = "idle"
+        # Initialize the robot ID.
         self._robot_id: str = "robot_2"
+        # Initialize the current task.
         self._task: str | None = None
         # This is needed so both callbacks don't run at the same time and cause race conditions.
         self._callback_group = MutuallyExclusiveCallbackGroup()
-        # Define the QoS profile required for the /fleet/tasks topic.
+        # Define the subscriber QoS profile required for the /fleet/tasks topic.
         qos_sub = QoSProfile(
             depth=5,
             reliability=ReliabilityPolicy.RELIABLE,
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
             history=HistoryPolicy.KEEP_LAST,
         )
+        # Define the publisher QoS profile required for the /fleet/status topic.
         qos_pub = QoSProfile(
             depth=3,
             reliability=ReliabilityPolicy.BEST_EFFORT,
             durability=DurabilityPolicy.VOLATILE,
         )
-        
-        # Creates a subscriber object for /fleet/tasks.
+
+        # Creates a subscriber object for /fleet/tasks using the defined QoS profile.
         self._subscriber: Subscription = self.create_subscription(
             # Message type: WE NEED TO MAKE SURE THIS MATCHES dispatcher's MESSAGE TYPE.
             String,
@@ -47,7 +59,7 @@ class RobotTwo(Node):
             # Only one callback can run at a time.
             callback_group=self._callback_group,
         )
-        # Creates a publisher object for /fleet/status. No callback here.
+        # Creates a publisher object for /fleet/status using the defined QoS profile. No callback here.
         self._publisher: Publisher = self.create_publisher(
             # Message type: WE NEED TO MAKE SURE THIS MATCHES monitor's and debug_logger's MESSAGE TYPE.
             String,
@@ -65,7 +77,7 @@ class RobotTwo(Node):
         )
 
     def _timer_callback(self) -> None:
-        """Timer callback for this node, publishes this node's information."""
+        """Publishes to /fleet/status the robot's id, status, and task."""
 
         # If there's no tasks, exit this function using return.
         if self._task is None:
@@ -73,18 +85,29 @@ class RobotTwo(Node):
         # Timer tick resolution of 0.1 chosen to account for robot_3's 0.3 s requirement.
         self._counter += 0.1
 
+        # If block for when the robot is still busy.
+        # Simulate slow 2.0 s sleep.
         if self._counter < 2.0:
+            # Set the status to busy.
             self._status = "busy"
+            # Create a message object.
             message = String()
+            # Create a dict payload.
             payload = {"robot_id": self._robot_id, "status": self._status, "task": self._task}
-
-            # Publish the message in JSON format.
+            # Dump the payload dict as JSON in message's data.
             message.data = json.dumps(payload)
+            # Publish the message in JSON format.
             self._publisher.publish(message)
+            # Return if the robot is not done.
             return
+
+        # Block for when the robot is done.
         # THE LOGGER INFO IS NOT THE SAME AS THE MESSAGE BEING PUBLISHED!!!
+        # Display in terminal the task completed.
         self.get_logger().info(f"Task {self._task} complete")
+        # Set the status to done.
         self._status = "done"
+        # Repeat the same steps from the if block once done.
         message = String()
         payload = {"robot_id": self._robot_id, "status": self._status, "task": self._task}
         message.data = json.dumps(payload)
@@ -94,7 +117,7 @@ class RobotTwo(Node):
         self._task = None
 
     def _subscriber_callback(self, message: String) -> None:
-        """Subscriber callback for this node, receives task messages from /fleet/tasks.
+        """Receives task messages from /fleet/tasks, filters tasks for id, and logs.
 
         Args:
             message (String): The JSON message received from the /fleet/tasks topic.
@@ -115,9 +138,10 @@ class RobotTwo(Node):
                 return
 
             # Otherwise, accept and set the task as robot_2's attribute.
-            # Change the status to "busy".
             self._task = task
+            # Change the status to "busy".
             self._status = "busy"
+            # Reset the counter.
             self._counter = 0
 
             # Log the task info to the terminal.
