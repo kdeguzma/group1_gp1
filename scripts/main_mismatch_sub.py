@@ -13,7 +13,7 @@ def main(args=None) -> None:
     """Main function to spin the mismatch_sub node."""
     # Initialize rclpy and build the node by calling the class.
     rclpy.init(args=args)
-    node = Mismatch("Daredevil")
+    node = Mismatch("qos_mismatch")
     # Spin the node.
     try:
         rclpy.spin(node)

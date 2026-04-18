@@ -12,8 +12,9 @@ setup(
     ],
     install_requires=["setuptools"],
     zip_safe=True,
-    maintainer="kdeguzma",
-    maintainer_email="kdeguzma@umd.edu",
+    maintainer="kdeguzma, ssnelson",
+    maintainer_email="kdeguzma@umd.edu, ssnelson@umd.edu",
+
     description="This package dispatches tasks to a fleet of mobile robots.",
     license="Apache-2.0",
     extras_require={
